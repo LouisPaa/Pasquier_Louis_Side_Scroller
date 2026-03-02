@@ -30,9 +30,9 @@ public class CharaController : MonoBehaviour
     {
         inputX = Input.GetAxisRaw("Horizontal");
 
-        bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, groundLayer);
+        bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
 
-        if (Input.GetButtonDown("Jump")&& isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
