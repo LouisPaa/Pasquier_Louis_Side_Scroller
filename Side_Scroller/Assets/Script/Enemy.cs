@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float engagementRange = 2f;
 
     [Header("Patrol Settings")]
-    [SerializeField] private float patrolRadius = 3f;
+    [SerializeField] private float patrolRadius = 5f;
     private Vector2 currentPatrolPoint;
     private bool hasPatrolPoint;
 
@@ -42,10 +42,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if (playerTransform == null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // Trouve la position du joueur
+        }
+    }
+
     private void Update()
     {
-        
+        DetectPlayer();
+        UpdateBehaviourState();
     }
+
 
 
     private void OnDrawGizmosSelected()
@@ -85,12 +95,12 @@ public class Enemy : MonoBehaviour
         if (hasPatrolPoint)
         {
             transform.position = Vector2.MoveTowards(transform.position, currentPatrolPoint, Time.deltaTime * 2f);
-            if (Vector2.Distance(transform.position, currentPatrolPoint) < 0.2f)
+            if (Vector2.Distance(transform.position, currentPatrolPoint) < 1f)
                 hasPatrolPoint = false;
         }
     }
 
-    private void PerformChase()
+    private void PerformChase() // Permet à l'ennemi de poursuivre le joueur lorsqu'il est dans son champs de vision
     {
         if (playerTransform != null)
         {
@@ -98,7 +108,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
        if (collision.gameObject.CompareTag("Player") && !isOnAttackCooldown)
         {
@@ -108,5 +118,17 @@ public class Enemy : MonoBehaviour
             }
         }
         
+    }
+
+    private void UpdateBehaviourState()
+    {
+        if (! isPlayerVisible && isPlayerInRange)
+        {
+            PerformPatrol();
+        }
+        else if (isPlayerVisible && !isPlayerInRange)
+        {
+            PerformChase();
+        }
     }
 }

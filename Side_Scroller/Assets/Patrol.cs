@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class Patrol : MonoBehaviour
+{
+    public Transform chara;
+    public Transform PatrolA;
+    public Transform PatrolB;
+
+    public float dir = 1f;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+
+        if (Vector2.Distance(chara.position, PatrolA.position) < 0.1f)
+        {
+           dir = 1f;
+        }
+        else if (Vector2.Distance(chara.position, PatrolB.position) < 0.1f)
+        {
+            dir = -1f;
+        }
+
+        chara.position += new Vector3(1 * Time.deltaTime * dir, 0, 0);
+    }
+}
