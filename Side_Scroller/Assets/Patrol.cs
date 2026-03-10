@@ -14,7 +14,7 @@ public class Patrol : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // Fait patrouiller l"ennemi entre les deux points de patrouilles
     {
         
 
