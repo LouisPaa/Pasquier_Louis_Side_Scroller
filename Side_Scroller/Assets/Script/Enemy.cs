@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour
         {
             if(collision.gameObject.tag == "Player")
             {
-                CharaHealth.TakeDammage(Damage);
+                //CharaHealth.TakeDammage(Damage);
             }
         }
         

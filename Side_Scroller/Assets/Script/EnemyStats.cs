@@ -7,8 +7,8 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private float dammage = 5f;
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private float health  = 15f;
-
-
+    [SerializeField]  private CharaHealth CharaHealth;
+    
     // FLASH
     Renderer rend;
     public Color flashColor = Color.white;
@@ -23,13 +23,17 @@ public class EnemyStats : MonoBehaviour
     }
 
     // Update is called once per frame
-
-    private void OnCollisionStay2D(Collision2D collision)
+    
+    private void OnCollisionStay2D(Collision2D collision) 
     {
         if (collision.gameObject.CompareTag("Player") && Input.GetButton("Fire1"))
         {
             Flash();
             health--;
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            CharaHealth.TakeDammage();
         }
     }
     void Update()
@@ -39,8 +43,8 @@ public class EnemyStats : MonoBehaviour
             Destroy(gameObject.transform.parent.gameObject);
         }
     }
-
-    private IEnumerator DoFlash()
+     
+    private IEnumerator DoFlash() 
     {
         rend.material.color = flashColor;
         yield return new WaitForSeconds(flashDuration);

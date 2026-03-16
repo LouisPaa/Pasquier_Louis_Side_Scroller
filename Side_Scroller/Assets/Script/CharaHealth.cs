@@ -3,8 +3,8 @@ using UnityEngine;
 public class CharaHealth : MonoBehaviour
 {
     [SerializeField] private float _maxHealth = 25f;
-    [SerializeField] private GameObject deathEffect, hitEffect;
-    private float _currentHealth;
+   // [SerializeField] private GameObject deathEffect, hitEffect;
+    public float _currentHealth;
 
     [SerializeField] private HealthBar _healthbar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,10 +13,18 @@ public class CharaHealth : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
-    public void TakeDammage(int amount)
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        _currentHealth -= amount;
-        if(_currentHealth <= 0)
+        if (collision.gameObject.CompareTag("Ennemi")) 
+        {
+            _currentHealth--;
+        }
+
+    }
+    public void TakeDammage()
+    {
+        if (_currentHealth <= 0)
         {
             Destroy(gameObject);
         }

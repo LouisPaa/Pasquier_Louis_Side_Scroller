@@ -19,7 +19,7 @@ public class CharaSpell : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ennemi") && Input.GetButtonDown("Fire 1"))
+       // if (collision.gameObject.CompareTag("Ennemi") && Input.GetButtonDown("Fire 1"))
         {
             
         }

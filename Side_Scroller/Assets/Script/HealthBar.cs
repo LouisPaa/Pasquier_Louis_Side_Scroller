@@ -1,11 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-   
-    
-    public void UpdateHealthBar(float maxHealth, float currentHealth)
-    {
+    public GameObject _Chara;
+    float Barredevie;
+    Slider slider;
 
+    private void Awake()
+    {
+        slider = GetComponent<Slider>();
+    }
+
+    private void Update()
+    {
+        Barredevie = _Chara.GetComponent<CharaHealth>()._currentHealth;
+        slider.value = Barredevie;
     }
 }
