@@ -21,7 +21,7 @@ public class CharaSpell : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemi") && Input.GetButtonDown("Fire 1"))
         {
-            ;
+            
         }
     }
 
