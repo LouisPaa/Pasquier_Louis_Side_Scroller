@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CharaController : MonoBehaviour
 {
@@ -15,6 +17,13 @@ public class CharaController : MonoBehaviour
     float inputX;
     public LayerMask groundLayer;
 
+    // paramètre de dash 
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,6 +37,10 @@ public class CharaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
         inputX = Input.GetAxisRaw("Horizontal");
 
         bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
@@ -38,10 +51,19 @@ public class CharaController : MonoBehaviour
         }
         //input =  new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // input.Normalize();
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
      void FixedUpdate()
      {
+        if (isDashing)
+        {
+            return;
+        }
         var v = rb.linearVelocity;
         v.x = inputX * moveSpeed;
         rb.linearVelocity = v;
@@ -49,7 +71,19 @@ public class CharaController : MonoBehaviour
         //rb.linearVelocity = input * moveSpeed;
     }
 
-
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower * inputX, 0f);
+        yield return new WaitForSeconds(dashingTime);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
 
 }
 
