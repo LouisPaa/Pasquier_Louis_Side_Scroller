@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharaHealth : MonoBehaviour
 {
-    [SerializeField] private float _maxHealth = 25f;
+    public float _maxHealth = 25f;
    // [SerializeField] private GameObject deathEffect, hitEffect;
     public float _currentHealth;
 
@@ -14,16 +14,21 @@ public class CharaHealth : MonoBehaviour
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision) // Fait baisser les pv du joueur jusqu'à le tuer 
     {
-        if (collision.gameObject.CompareTag("Ennemi")) 
+        if (collision.gameObject.CompareTag("Ennemi") && !collision.gameObject.GetComponent<EnemyStats>().bAttack) 
         {
-            _currentHealth--;
+            collision.gameObject.GetComponent<EnemyStats>().AttackPlayer(); // attaque le joueur en récupérant les stats de l'ennemi
+            TakeDammage();
         }
 
     }
     public void TakeDammage()
     {
+        _currentHealth--;
+        _healthbar.setSlider(); // récupère le slider de la barre de vie et le lie aux PV du joueur
+
+        // N'EST JAMAIS APPELE
         if (_currentHealth <= 0)
         {
             Destroy(gameObject);

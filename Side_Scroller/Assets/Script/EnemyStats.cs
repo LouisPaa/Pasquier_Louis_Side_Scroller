@@ -5,7 +5,10 @@ using System.Collections.Generic;
 public class EnemyStats : MonoBehaviour
 {
     [SerializeField] private float dammage = 5f;
-    [SerializeField] private float attackCooldown = 1f;
+
+    [SerializeField] public float attackCooldown = 1f;
+    [SerializeField] public float attackCooldownMax = 1f;
+    public bool bAttack = false;
     [SerializeField] private float health  = 15f;
     [SerializeField]  private CharaHealth CharaHealth;
     
@@ -20,37 +23,53 @@ public class EnemyStats : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
+
+        attackCooldown = attackCooldownMax;
     }
 
     // Update is called once per frame
     
-    private void OnCollisionStay2D(Collision2D collision) 
+    private void OnCollisionStay2D(Collision2D collision) // Permet d'attaquer l'ennemi en cliquant sur clic gauche 
     {
         if (collision.gameObject.CompareTag("Player") && Input.GetButton("Fire1"))
         {
             Flash();
             health--;
         }
-        if (collision.gameObject.tag == "Player")
-        {
-            CharaHealth.TakeDammage();
-        }
+        
     }
+
+    public void AttackPlayer()
+    {
+        bAttack = true;
+    }
+
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0)  // détruit le GameObject si l'objet tombe à zéro PV
         {
             Destroy(gameObject.transform.parent.gameObject);
         }
+
+        if (bAttack) // définis le cooldown de l'attaque 
+        {
+            attackCooldown -= Time.deltaTime;
+
+            if (attackCooldown <= 0f)
+            {
+                bAttack = false;
+                attackCooldown = attackCooldownMax;
+            }
+        }
     }
      
-    private IEnumerator DoFlash() 
+    private IEnumerator DoFlash() // Permet de créer un flash de couleur quand l'ennemi prend des dégats 
     {
         rend.material.color = flashColor;
         yield return new WaitForSeconds(flashDuration);
         rend.material.color = originalColor;
     }
-    public void Flash()
+    public void Flash() // Gère les variation de couleurs dû au flash 
     {
         StopAllCoroutines();
         StartCoroutine(DoFlash());
