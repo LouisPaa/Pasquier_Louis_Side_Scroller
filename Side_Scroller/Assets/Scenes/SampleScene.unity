@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266021463255497855, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.31
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7266021463255497855, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_LocalPosition.y
@@ -494,6 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   dammage: 5
   attackCooldown: 5
+  attackCooldownMax: 1
+  bAttack: 0
   health: 15
   CharaHealth: {fileID: 700632887}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
@@ -752,9 +754,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9ee2468770c624e83b45c17215afdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharaHealth
-  _maxHealth: 25
+  _maxHealth: 2
   _currentHealth: 0
-  _healthbar: {fileID: 0}
+  _healthbar: {fileID: 2139577290}
 --- !u!1 &718792033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1730,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   dammage: 5
   attackCooldown: 1.5
+  attackCooldownMax: 1
+  bAttack: 0
   health: 15
   CharaHealth: {fileID: 0}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2071,6 +2075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   dammage: 5
   attackCooldown: 1.5
+  attackCooldownMax: 1
+  bAttack: 0
   health: 150
   CharaHealth: {fileID: 0}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2945,6 +2951,7 @@ GameObject:
   - component: {fileID: 2139577286}
   - component: {fileID: 2139577289}
   - component: {fileID: 2139577288}
+  - component: {fileID: 2139577290}
   m_Layer: 5
   m_Name: Foreground
   m_TagString: Untagged
@@ -3009,6 +3016,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139577285}
   m_CullTransparentMesh: 1
+--- !u!114 &2139577290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139577285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e4c58829c9e31468bc9d1b8af70463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
+  _Chara: {fileID: 700632873}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
