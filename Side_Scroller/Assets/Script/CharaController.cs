@@ -73,6 +73,7 @@ public class CharaController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        Physics2D.IgnoreLayerCollision(8, 9, true);
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
@@ -81,6 +82,7 @@ public class CharaController : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
+        Physics2D.IgnoreLayerCollision(8, 9, false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
