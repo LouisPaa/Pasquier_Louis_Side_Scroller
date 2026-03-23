@@ -22,7 +22,7 @@ public class CharaController : MonoBehaviour
     private bool isDashing;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float dashingCooldown = 0.5f;
 
     void Awake()
     {
@@ -52,7 +52,7 @@ public class CharaController : MonoBehaviour
         //input =  new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // input.Normalize();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& canDash) // permet au joueur d'effectuer un dash en appuyant sur une touche
         {
             StartCoroutine(Dash());
         }
@@ -71,7 +71,7 @@ public class CharaController : MonoBehaviour
         //rb.linearVelocity = input * moveSpeed;
     }
 
-    private IEnumerator Dash()
+    private IEnumerator Dash() // Permet au joueur d'effectuer un dash 
     {
         Physics2D.IgnoreLayerCollision(8, 9, true);
         canDash = false;

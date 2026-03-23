@@ -236,6 +236,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_TagString
       value: Ennemi
       objectReference: {fileID: 0}
@@ -706,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharaController
   moveSpeed: 5
-  acceleration: 20
+  acceleration: 10
   gravity: -5
   jumpForce: 6
   groundLayer:
@@ -754,6 +758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9ee2468770c624e83b45c17215afdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharaHealth
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
   _maxHealth: 2
   _currentHealth: 0
   _healthbar: {fileID: 2139577290}
@@ -1248,6 +1254,10 @@ PrefabInstance:
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_TagString
@@ -2096,6 +2106,10 @@ PrefabInstance:
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_TagString

@@ -30,6 +30,7 @@ public class CharaHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemi") && !collision.gameObject.GetComponent<EnemyStats>().bAttack) 
         {
+            Flash();
             collision.gameObject.GetComponent<EnemyStats>().AttackPlayer(); // attaque le joueur en récupérant les stats de l'ennemi
             TakeDammage();
         }
