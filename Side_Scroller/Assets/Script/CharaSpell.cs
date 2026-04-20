@@ -7,6 +7,7 @@ public class CharaSpell : MonoBehaviour
     [Header("dépalcement")]
     [SerializeField] float Speed = 2f;
     [SerializeField] float MaxDistance = 5f;
+    [SerializeField] float moveSpeed = 5f;
 
     [Header("Stats")]
     [SerializeField] float dammage = 5f;
@@ -31,6 +32,7 @@ public class CharaSpell : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Instantiate(cubePrefab, transform.position, Quaternion.identity);
+
         }
     }
 }
