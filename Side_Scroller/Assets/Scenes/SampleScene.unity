@@ -944,8 +944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharaProjectile1
   projectileSpawnPoint: {fileID: 526448127}
   projectilePrefab: {fileID: 7371373246727821887, guid: 34281970b7cd4fd45a472190e3a42233, type: 3}
-  projectileSpeed: 10
-  projectileLifetime: 5
+  projectileSpeed: 8
+  projectileLifetime: 3
   ShootDelay: 0.5
 --- !u!1 &718792033
 GameObject:
