@@ -25,7 +25,7 @@ public class CharaProjectile1 : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Fire2"))
         {
             var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
 
