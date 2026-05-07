@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a03d6073eb983b4aa49d6330aee0ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  knockbackDistance: 10
+  knockbackDistance: 3

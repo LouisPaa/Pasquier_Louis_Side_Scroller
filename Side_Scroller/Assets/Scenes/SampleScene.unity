@@ -229,11 +229,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_Mass
-      value: 500
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      propertyPath: m_Name
+      value: Ennemi
       objectReference: {fileID: 0}
     - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_Layer
@@ -301,6 +305,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 387865285}
+    - targetCorrespondingSourceObject: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 387865286}
   m_SourcePrefab: {fileID: 100100000, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
 --- !u!1 &244418414
 GameObject:
@@ -640,6 +647,19 @@ MonoBehaviour:
   CharaHealth: {fileID: 700632887}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 0.2
+--- !u!114 &387865286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387865279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8cd7fcd5603da4d93e51df7a83bb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  knockbackDuration: 0.5
 --- !u!1 &486375231
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharaProjectile1
   projectileSpawnPoint: {fileID: 526448127}
   projectilePrefab: {fileID: 7371373246727821887, guid: 34281970b7cd4fd45a472190e3a42233, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 15
   ShootDelay: 0.5
   maxDistance: 5
 --- !u!1 &718792033
@@ -1439,11 +1459,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_Mass
-      value: 500
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      propertyPath: m_Name
+      value: Ennemi
       objectReference: {fileID: 0}
     - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_Layer
@@ -1511,6 +1535,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1249607704}
+    - targetCorrespondingSourceObject: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1249607705}
   m_SourcePrefab: {fileID: 100100000, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
 --- !u!4 &1098148034 stripped
 Transform:
@@ -1936,6 +1963,19 @@ MonoBehaviour:
   CharaHealth: {fileID: 0}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 0.2
+--- !u!114 &1249607705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249607698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8cd7fcd5603da4d93e51df7a83bb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  knockbackDuration: 0.5
 --- !u!114 &1295496882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,6 +2471,19 @@ MonoBehaviour:
   CharaHealth: {fileID: 0}
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 0.2
+--- !u!114 &1461263348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461263341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8cd7fcd5603da4d93e51df7a83bb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  knockbackDuration: 0.5
 --- !u!1001 &1543830507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2441,11 +2494,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_Mass
-      value: 500
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1658735055982988409, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      propertyPath: m_Name
+      value: Ennemi
       objectReference: {fileID: 0}
     - target: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       propertyPath: m_Layer
@@ -2517,6 +2574,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1461263347}
+    - targetCorrespondingSourceObject: {fileID: 1968882009154737125, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1461263348}
   m_SourcePrefab: {fileID: 100100000, guid: 1fadda908f00ab94db5613ec9232aa34, type: 3}
 --- !u!1 &1599401961
 GameObject:

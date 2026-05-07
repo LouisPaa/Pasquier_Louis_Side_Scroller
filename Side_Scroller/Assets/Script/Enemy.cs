@@ -6,8 +6,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    public float knockbackDuration = 0.5f;
-    private float elapsed;
+    [SerializeField] private float knockbackDuration = 0.5f;
+    
 
     public void ApplyKnockback(Vector2 direction, float distance)
     {
@@ -20,10 +20,12 @@ public class Enemy : MonoBehaviour
         Vector2 startPos = transform.position;
         Vector2 targetPos = startPos + direction.normalized * distance;
 
+        float elapsed = 0f;
+
         while (elapsed < knockbackDuration)
         {
 
-            float t = 1 - Mathf.Pow(1 - (Time.time / knockbackDuration), 2);
+            float t = elapsed / knockbackDuration;
 
             transform.position = Vector2.Lerp(startPos, targetPos, t);
 

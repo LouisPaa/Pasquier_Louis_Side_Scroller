@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     
 
     
-    public float knockbackDistance = 10f; // Définis la distance à laquelle l'ennemi sera repoussé
+   [SerializeField] private float knockbackDistance = 10f; // Définis la distance à laquelle l'ennemi sera repoussé
     private void OnCollisionEnter2D(Collision2D collision) // Permet de repousser l'ennemi lorsque le projectile entre en contact avec l'ennemi
     {
         if (collision.gameObject.CompareTag("Ennemi"))
