@@ -3,13 +3,14 @@ using UnityEngine;
 public class PausedMenu : MonoBehaviour
 {
     public GameObject container;
+  
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            container.SetActive(true);
+            container .SetActive(true);
             Time.timeScale = 0f;
         }
     }
@@ -24,4 +25,6 @@ public class PausedMenu : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
     }
+
+
 }
