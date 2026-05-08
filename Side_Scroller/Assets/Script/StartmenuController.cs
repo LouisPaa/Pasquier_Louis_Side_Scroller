@@ -8,6 +8,7 @@ public class StartmenuController : MonoBehaviour
   public void OnStartClick()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
     }
 
     public void OnExitClick()
@@ -15,6 +16,7 @@ public class StartmenuController : MonoBehaviour
 
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+
     }
        
 }
