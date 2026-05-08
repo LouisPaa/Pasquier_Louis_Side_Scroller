@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PausedMenu : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class PausedMenu : MonoBehaviour
             container .SetActive(true);
             Time.timeScale = 0f;
         }
+        
     }
 
     public void ResumeButton()
@@ -23,8 +27,14 @@ public class PausedMenu : MonoBehaviour
 
     public void MainMenuButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("StartScene");
     }
 
+    public void OptionsButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("OptionsScene");
+        
+    }
 
 }
