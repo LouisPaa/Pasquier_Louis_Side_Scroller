@@ -15,11 +15,11 @@ public class PausedMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+       /* if (Input.GetKeyDown(KeyCode.Escape))
         {
             container .SetActive(true);
             Time.timeScale = 0f;
-        }
+        }*/
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -28,13 +28,24 @@ public class PausedMenu : MonoBehaviour
                 OptionsMenu.SetActive(false);
                 container.SetActive(true);
             }
+            else if (container.activeSelf)
+            {
+                container.SetActive(false);
+                Time.timeScale = 1f;
+            }
+
+            else
+            {
+                container.SetActive(true);
+                    Time.timeScale = 0f;
+            }
         }
 
-        else
+       /* else
         {
             container.SetActive(false);
                 Time.timeScale = 0f;
-        }
+        }*/
     }
 
     public void ResumeButton()

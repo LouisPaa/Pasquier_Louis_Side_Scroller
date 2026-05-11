@@ -10,10 +10,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(levelToLoad);
     }
 
-    public void SettingsButton()
-    {
-
-    }
+    
 
     public void QuitGame()
     {
