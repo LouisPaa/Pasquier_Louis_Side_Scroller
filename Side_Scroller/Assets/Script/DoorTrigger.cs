@@ -12,6 +12,7 @@ public class DoorTrigger : MonoBehaviour
     bool activated = false;
     bool isOpened = false;
 
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player") || col.CompareTag("Projectile"))
@@ -22,11 +23,24 @@ public class DoorTrigger : MonoBehaviour
                 activated = true;
             }
 
-            if (!isOpened)
+            if (currentSwitches >= switchesNeeded && ! isOpened)
             {
                 isOpened = true;
                 door.transform.position += new Vector3(0, 5, 0);
             }
         }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D col)
+        {
+            if (col.CompareTag("Player") || col.CompareTag("Projectile"))
+            {
+                if (activated)
+                {
+                    currentSwitches--;
+                    activated = false;
+                }
+            }
     }
 }
