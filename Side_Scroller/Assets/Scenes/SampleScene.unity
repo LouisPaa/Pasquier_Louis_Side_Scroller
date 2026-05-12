@@ -1945,25 +1945,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8289908049057244805, guid: c1e155b6a06d21c4a9f8756c432ea228, type: 3}
   m_PrefabInstance: {fileID: 867345969}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &700632878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700632873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb13450710ef364b9f2781bbaea1b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharaController
-  moveSpeed: 5
-  acceleration: 10
-  gravity: -5
-  jumpForce: 6
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &700632883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2773,9 +2754,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 526448127}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 98852103621116689, guid: c1e155b6a06d21c4a9f8756c432ea228, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 700632878}
     - targetCorrespondingSourceObject: {fileID: 98852103621116689, guid: c1e155b6a06d21c4a9f8756c432ea228, type: 3}
       insertIndex: -1
       addedObject: {fileID: 700632883}

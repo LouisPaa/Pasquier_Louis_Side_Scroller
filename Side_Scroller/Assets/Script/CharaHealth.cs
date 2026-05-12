@@ -60,4 +60,14 @@ public class CharaHealth : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(DoFlash());
     }
+
+    public void Heal(float amount) // Permet au joueur de récupérer des pv après avoir élimininé un ennemi
+    {
+        _currentHealth += amount;
+        if (_currentHealth > _maxHealth)
+        {
+            _currentHealth = _maxHealth;
+        }
+        _healthbar.setSlider();
+    }
 }
