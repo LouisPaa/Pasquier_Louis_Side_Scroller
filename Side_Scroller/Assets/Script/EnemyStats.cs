@@ -11,7 +11,9 @@ public class EnemyStats : MonoBehaviour
     public bool bAttack = false;
     [SerializeField] private float health  = 15f;
     [SerializeField]  private CharaHealth CharaHealth;
-    
+    [SerializeField] private CharaHealth playerHealth;
+    [SerializeField] private float healAmount = 5f;
+
     // FLASH
     Renderer rend;
     public Color flashColor = Color.white;
@@ -48,6 +50,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (health <= 0)  // détruit le GameObject si l'objet tombe à zéro PV
         {
+            playerHealth.Heal(healAmount); // Appelle une fonction qui permet au joueur de récupérer des PV après avoir élimininé un ennemi
             Destroy(gameObject.transform.parent.gameObject);
         }
 

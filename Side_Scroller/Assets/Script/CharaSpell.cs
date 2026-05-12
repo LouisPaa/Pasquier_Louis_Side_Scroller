@@ -12,7 +12,7 @@ public class CharaSpell : MonoBehaviour
     [Header("Stats")]
     [SerializeField] float dammage = 5f;
     [SerializeField] float attackCooldown = 1f;
-    [SerializeField] float heatlh = 20f;
+    
 
     [SerializeField] GameObject cubePrefab; 
 
