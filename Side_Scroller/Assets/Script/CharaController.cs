@@ -9,7 +9,7 @@ public class CharaController : MonoBehaviour
     private string Idle = "Idle";
     private string Run = "Course";
     private string Jump = "Saut";
-
+    private string dash = "Dash";
 
 
     [Header("Move variables")]
@@ -82,10 +82,13 @@ public class CharaController : MonoBehaviour
 
      void FixedUpdate()
      {
-        if (isDashing)
+
+        if (isDashing && inputX>0 || isDashing && inputX<0)
         {
+            Animation.SetBool(dash, true);
             return;
         }
+        
         var v = rb.linearVelocity;
         v.x = inputX * moveSpeed;
         rb.linearVelocity = v;
@@ -119,17 +122,26 @@ public class CharaController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(8, 9, true);
         canDash = false;
         isDashing = true;
+        Animation.SetBool(dash, true);
+        Animation.SetBool(Run, false);
+        Animation.SetBool(Jump, false);
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower * inputX, 0f);
+        rb.linearVelocity = new Vector2(inputX * dashingPower, 0f);
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
+        Animation.SetBool(dash, false);
         Physics2D.IgnoreLayerCollision(8, 9, false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+
+       
+       
     }
 
+
+   
 }
 
 
