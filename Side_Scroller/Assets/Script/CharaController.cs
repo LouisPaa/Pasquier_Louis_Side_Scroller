@@ -4,7 +4,15 @@ using System.Collections.Generic;
 
 public class CharaController : MonoBehaviour
 {
-   [Header("Move variables")]
+    [Header("Animation")]
+    private Animator Animation;
+    private string Idle = "Idle";
+    private string Run = "Course";
+    private string Jump = "Saut";
+
+
+
+    [Header("Move variables")]
    [SerializeField] float moveSpeed = 5f;
    [SerializeField] float acceleration = 20f;
 
@@ -31,7 +39,7 @@ public class CharaController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Animation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +57,17 @@ public class CharaController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+        else
+        {
+            Animation.SetBool(Jump, false);
+        }
+
+        if(!isGrounded || !isGrounded && inputX > 0)
+        {
+            Animation.SetBool(Jump, true);
+            Animation.SetBool(Run, false);
+            Animation.SetBool(Idle, false);
+        }
         //input =  new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // input.Normalize();
 
@@ -56,6 +75,9 @@ public class CharaController : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+
+        
+
     }
 
      void FixedUpdate()
@@ -69,6 +91,27 @@ public class CharaController : MonoBehaviour
         rb.linearVelocity = v;
 
         //rb.linearVelocity = input * moveSpeed;
+
+        if (inputX > 0f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            Animation.SetBool(Run, true);
+            Animation.SetBool(Idle, false);
+        }
+        else if (inputX < 0f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            Animation.SetBool(Run, true);
+            Animation.SetBool(Idle, false);
+        }
+        else
+        {
+            Animation.SetBool(Idle, true);
+            Animation.SetBool(Run, false);
+        }
+
+
+       
     }
 
     private IEnumerator Dash() // Permet au joueur d'effectuer un dash 

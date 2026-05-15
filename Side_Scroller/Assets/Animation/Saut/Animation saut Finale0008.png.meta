@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e98fde38bcecb7742bd46ca9f1d746bd
+guid: f78d31593caee9b489a45ae62738b25c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1667612370718423999
-    second: "cycle animation idle avanc\xE9e finale 0002_0"
+      213: 5371829612326964946
+    second: Animation saut Finale0008_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "cycle animation idle avanc\xE9e finale 0002_0"
+      name: Animation saut Finale0008_0
       rect:
         serializedVersion: 2
-        x: 1172
-        y: 131
-        width: 279
-        height: 893
+        x: 1124
+        y: 286
+        width: 464
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 144084c52637bd8e0800000000000000
-      internalID: -1667612370718423999
+      spriteID: 2de4cac32929c8a40800000000000000
+      internalID: 5371829612326964946
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "cycle animation idle avanc\xE9e finale 0002_0": -1667612370718423999
+      Animation saut Finale0008_0: 5371829612326964946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

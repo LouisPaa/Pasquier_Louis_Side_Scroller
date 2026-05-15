@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e98fde38bcecb7742bd46ca9f1d746bd
+guid: 7fdfc70a916fac74c8626ceb8dac49f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1667612370718423999
-    second: "cycle animation idle avanc\xE9e finale 0002_0"
+      213: 3871744355643166202
+    second: Animation saut Finale0002_0
+  - first:
+      213: -2916599185526712028
+    second: Animation saut Finale0002_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "cycle animation idle avanc\xE9e finale 0002_0"
+      name: Animation saut Finale0002_0
       rect:
         serializedVersion: 2
-        x: 1172
-        y: 131
-        width: 279
-        height: 893
+        x: 1132
+        y: 243
+        width: 310
+        height: 755
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 144084c52637bd8e0800000000000000
-      internalID: -1667612370718423999
+      spriteID: afd0c336af23bb530800000000000000
+      internalID: 3871744355643166202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation saut Finale0002_1
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 998
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4299c7a5e782687d0800000000000000
+      internalID: -2916599185526712028
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "cycle animation idle avanc\xE9e finale 0002_0": -1667612370718423999
+      Animation saut Finale0002_0: 3871744355643166202
+      Animation saut Finale0002_1: -2916599185526712028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

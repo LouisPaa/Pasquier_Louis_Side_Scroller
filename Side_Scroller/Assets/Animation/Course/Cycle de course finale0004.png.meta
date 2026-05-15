@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e98fde38bcecb7742bd46ca9f1d746bd
+guid: a01cfcd7e39314249a7d7543012bef53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1667612370718423999
-    second: "cycle animation idle avanc\xE9e finale 0002_0"
+      213: -3771884356842495012
+    second: Cycle de course finale0004_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "cycle animation idle avanc\xE9e finale 0002_0"
+      name: Cycle de course finale0004_0
       rect:
         serializedVersion: 2
-        x: 1172
-        y: 131
-        width: 279
-        height: 893
+        x: 963
+        y: 136
+        width: 578
+        height: 865
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 144084c52637bd8e0800000000000000
-      internalID: -1667612370718423999
+      spriteID: cd3ec88692397abc0800000000000000
+      internalID: -3771884356842495012
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "cycle animation idle avanc\xE9e finale 0002_0": -1667612370718423999
+      Cycle de course finale0004_0: -3771884356842495012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
