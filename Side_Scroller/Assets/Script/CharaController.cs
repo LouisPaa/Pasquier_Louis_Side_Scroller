@@ -10,7 +10,7 @@ public class CharaController : MonoBehaviour
     private string Run = "Course";
     private string Jump = "Saut";
     private string dash = "Dash";
-
+    private string attaque = "Attaque";
 
     [Header("Move variables")]
    [SerializeField] float moveSpeed = 5f;
