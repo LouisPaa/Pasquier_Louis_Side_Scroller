@@ -10,7 +10,8 @@ public class CharaProjectile1 : MonoBehaviour
  //  [SerializeField] private float projectileLifetime = 5f;
    [SerializeField] private float ShootDelay = 0.5f;
    [SerializeField] private float maxDistance = 5f;
-
+    private Animator Animation;
+    private string Vague = "Vague";
     float lastDirection = 1f;
     float inputX;
     // Update is called once per frame
@@ -28,16 +29,17 @@ public class CharaProjectile1 : MonoBehaviour
         if (Input.GetButtonDown("Fire2")) 
         {
             var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-
             var rb = projectile.GetComponent<Rigidbody2D>();
             rb.linearVelocity = new Vector2(lastDirection* projectileSpeed,0f);
-
+            if (lastDirection < 0)
+            {
+                projectile.transform.localScale = new Vector3(-1f, 1f, 1f); // Inverse la direction du projectile si le joueur regarde vers la gauche
+            }
             // Permet d'ignorer la collision entre le projectile et le joueur
             Collider2D playerCollider = GetComponent<Collider2D>();
             Collider2D projectileCollider = projectile.GetComponent<Collider2D>();
 
             Physics2D.IgnoreCollision(playerCollider, projectileCollider);
-
             Destroy(projectile,maxDistance / projectileSpeed);
         }
 
