@@ -14,6 +14,9 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private CharaHealth playerHealth;
     [SerializeField] private float healAmount = 5f;
 
+    [Header("Animation")]
+    private Animator Animation;
+    private string Attaque = "Attaque";
     // FLASH
     Renderer rend;
     public Color flashColor = Color.white;
@@ -37,6 +40,7 @@ public class EnemyStats : MonoBehaviour
         {
             Flash();
             health--;
+            Animation.SetBool(Attaque, true);
         }
         
     }
