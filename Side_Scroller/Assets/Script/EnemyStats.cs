@@ -40,7 +40,7 @@ public class EnemyStats : MonoBehaviour
         {
             Flash();
             health--;
-            Animation.SetBool(Attaque, true);
+            
         }
         
     }

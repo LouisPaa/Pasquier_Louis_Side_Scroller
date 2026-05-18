@@ -16,7 +16,6 @@ public class CharaHealth : MonoBehaviour
     public float _currentHealth;
 
     [SerializeField] private HealthBar _healthbar;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rend = GetComponent<Renderer>();
