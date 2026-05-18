@@ -29,11 +29,8 @@ public class Patrol : MonoBehaviour
         else if (Vector2.Distance(chara.position, PatrolB.position) < 0.1f)
         {
             dir = -1f;
-            transform.localScale = new Vector3(-1, 1, 1);
         }
-
-        Animation.SetBool(Marche, true);
-
         chara.position += new Vector3(1 * Time.deltaTime * dir, 0, 0);
+        
     }
 }
