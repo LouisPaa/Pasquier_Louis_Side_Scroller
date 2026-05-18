@@ -8,7 +8,7 @@ public class CheckPoint : MonoBehaviour
 
     private void Awake()
     {
-        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform; //Permet de récupmérer la position du spawn du joueur 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

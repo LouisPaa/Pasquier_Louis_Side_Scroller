@@ -15,7 +15,7 @@ public class ParallaxController : MonoBehaviour
     private ParallaxLayer[] layers;
     private Vector3 previousCamPos;
 
-    private void Awake()
+    private void Awake() // Permet de récupérer la position de la caméra et de stocker les différentes couches de parallax
     {
         if (cam == null) cam = Camera.main;
 
@@ -31,7 +31,7 @@ public class ParallaxController : MonoBehaviour
         }
     }
 
-     void LateUpdate()
+     void LateUpdate() // Permet de déplacer les différentes couches de parallax en fonction du mouvement de la caméra
     {
       Vector3 camPos = cam.transform.position;
         Vector3 delta = camPos - previousCamPos;

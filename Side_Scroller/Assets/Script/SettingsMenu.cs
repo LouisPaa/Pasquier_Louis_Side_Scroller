@@ -10,7 +10,7 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
 
-    public void Start()
+    public void Start() // Récupère les résolutions disponibles sur l'ordinateur du joueur et les ajoute au menu déroulant des résolutions
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
@@ -25,13 +25,13 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume(float volume) // Permet de régler le volume du jeu en fonction de la valeur du slider
     {
         audioMixer.SetFloat("volume", volume);
     }
 
 
-    public void SetFullScreen(bool isFullScreen)
+    public void SetFullScreen(bool isFullScreen) // Permet de basculer entre le mode plein écran et le mode fenêtré 
     {
         Screen.fullScreen = isFullScreen;
     }

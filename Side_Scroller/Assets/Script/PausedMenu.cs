@@ -14,13 +14,13 @@ public class PausedMenu : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {
-       /* if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            container .SetActive(true);
-            Time.timeScale = 0f;
-        }*/
-        
+    {// Permet d'afficher le menu de pause en appuyant sur la touche "Echap"
+        /* if (Input.GetKeyDown(KeyCode.Escape))
+         {
+             container .SetActive(true);
+             Time.timeScale = 0f;
+         }*/
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (OptionsMenu.activeSelf)
@@ -48,18 +48,18 @@ public class PausedMenu : MonoBehaviour
         }*/
     }
 
-    public void ResumeButton()
+    public void ResumeButton() // Permet de reprendre le jeu lorsque le joueur clique sur le bouton "Resume"
     {
         container.SetActive(false);
         Time.timeScale = 1;
     }
 
-    public void MainMenuButton()
+    public void MainMenuButton() // Permet de retourner au menu principal lorsque le joueur clique sur le bouton "Main Menu"
     {
         SceneManager.LoadScene("StartScene");
     }
 
-    public void OptionsButton()
+    public void OptionsButton() // Permet d'afficher le menu des options lorsque le joueur clique sur le bouton "Options"
     {
         
         container.SetActive(false);

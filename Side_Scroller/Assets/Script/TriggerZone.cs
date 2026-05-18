@@ -11,7 +11,7 @@ public class TriggerZone : MonoBehaviour
     public UnityEvent onTriggerEnter;
     public UnityEvent onTriggerExit;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)    //
     {
         if (alreadyEntered)
             return;

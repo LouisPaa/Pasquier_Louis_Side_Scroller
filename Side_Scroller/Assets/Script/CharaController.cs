@@ -45,7 +45,7 @@ public class CharaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
+        if (isDashing) // Permet de désactiver les autres mouvements pendant le dash
         {
             return;
         }
@@ -53,7 +53,7 @@ public class CharaController : MonoBehaviour
 
         bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded) 
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
@@ -95,7 +95,7 @@ public class CharaController : MonoBehaviour
 
         //rb.linearVelocity = input * moveSpeed;
 
-        if (inputX > 0f)
+        if (inputX > 0f) //Permet d'orienter le sprite face au mouvement et de lancer les animations de course et d'idle
         {
             transform.localScale = new Vector3(1, 1, 1);
             Animation.SetBool(Run, true);

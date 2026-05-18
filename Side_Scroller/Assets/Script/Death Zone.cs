@@ -11,7 +11,7 @@ public class DeathZone : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {// pemret de faire réapparaitre le joueur à la position du spawner si il entre en collision avec la zone de mort
         if (collision.CompareTag("Player"))
         {
         collision.transform.position = playerSpawn.position;

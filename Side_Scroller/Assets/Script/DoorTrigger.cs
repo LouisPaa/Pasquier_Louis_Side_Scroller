@@ -13,7 +13,7 @@ public class DoorTrigger : MonoBehaviour
     bool isOpened = false;
 
     
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)  // Permet d'ouvrir la porte si le nombre de switchs activés est égal ou supérieur au nombre de switchs nécessaires
     {
         if (col.CompareTag("Player") || col.CompareTag("Projectile"))
         {
@@ -32,8 +32,8 @@ public class DoorTrigger : MonoBehaviour
     }
 
 
-    private void OnTriggerExit2D(Collider2D col)
-        {
+    private void OnTriggerExit2D(Collider2D col) // Permet de désactiver le switch si le joueur ou le projectile sort de la zone de trigger
+    {
             if (col.CompareTag("Player") || col.CompareTag("Projectile"))
             {
                 if (activated)

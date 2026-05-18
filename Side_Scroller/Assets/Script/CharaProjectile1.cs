@@ -16,23 +16,23 @@ public class CharaProjectile1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        float inputX = Input.GetAxisRaw("Horizontal");
+        // Permet de récupérer la direction du joueur pour que le projectile soit lancé dans la bonne direction
+        float inputX = Input.GetAxisRaw("Horizontal"); 
 
         if (inputX != 0)
         {
             lastDirection = inputX;
         }
 
-
-        if (Input.GetButtonDown("Fire2"))
+        // Permet de tirer un projecctile
+        if (Input.GetButtonDown("Fire2")) 
         {
             var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
 
             var rb = projectile.GetComponent<Rigidbody2D>();
             rb.linearVelocity = new Vector2(lastDirection* projectileSpeed,0f);
 
-
+            // Permet d'ignorer la collision entre le projectile et le joueur
             Collider2D playerCollider = GetComponent<Collider2D>();
             Collider2D projectileCollider = projectile.GetComponent<Collider2D>();
 

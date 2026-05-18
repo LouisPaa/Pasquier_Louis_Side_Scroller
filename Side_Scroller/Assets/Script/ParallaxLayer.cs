@@ -37,7 +37,7 @@ public class ParallaxLayer
         }
     }
 
-    public void Move(Vector3 delta, bool vertical, float smoothing)
+    public void Move(Vector3 delta, bool vertical, float smoothing) // Permet de déplacer la couche de parallax en fonction du mouvement de la caméra et des paramètres de vitesse 
     {
         float moveX = delta.x * (1f - speedX);
         float moveY = vertical ? delta.y * (1f - speedY) : 0f;
@@ -51,7 +51,7 @@ public class ParallaxLayer
         }
     }
 
-    public void WrapHorizontal()
+    public void WrapHorizontal() 
     {
         float camX = Camera.main.transform.position.x;
         float diffX = camX - _transform.position.x; 
