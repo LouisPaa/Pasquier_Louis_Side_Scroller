@@ -10,7 +10,8 @@ public class ParallaxLayer
 
     private Transform _transform;
     private Vector3 _targetPosition;
-   // private float _maxDistanceX;
+    private Vector3 _startPosition;
+    // private float _maxDistanceX;
     //private float _maxDistanceY;
 
     private SpriteRenderer _sprite;
@@ -49,6 +50,7 @@ public class ParallaxLayer
         float moveY = vertical ? delta.y * (1f - speedY) : 0f;
 
         _targetPosition += new Vector3(moveX, moveY, 0f);
+        _targetPosition.z = _startPosition.z; 
         _transform.position = smoothing > 0f ? Vector3.Lerp(_transform.position, _targetPosition, smoothing) : _targetPosition;
 
         if (_infiniteX)
