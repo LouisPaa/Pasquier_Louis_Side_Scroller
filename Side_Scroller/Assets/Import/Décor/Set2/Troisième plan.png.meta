@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 3e24c6b6c2ba2f54cb2606670d208cfc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1081500993757719505
+    second: "Troisi\xE8me plan_0"
+  - first:
+      213: -1468585828775893013
+    second: "Troisi\xE8me plan_1"
+  - first:
+      213: 8562444227021750232
+    second: "Troisi\xE8me plan_2"
+  - first:
+      213: 2758619795547659237
+    second: "Troisi\xE8me plan_3"
+  - first:
+      213: -6412754325562000940
+    second: "Troisi\xE8me plan_4"
+  - first:
+      213: 6860343587916264042
+    second: "Troisi\xE8me plan_5"
+  - first:
+      213: -1854812396823162327
+    second: "Troisi\xE8me plan_6"
+  - first:
+      213: 348914947847280667
+    second: "Troisi\xE8me plan_7"
+  - first:
+      213: 5667326280598036064
+    second: "Troisi\xE8me plan_8"
+  - first:
+      213: -3036581060019491118
+    second: "Troisi\xE8me plan_9"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 1920
+        height: 787
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db292d7c63420f00800000000000000
+      internalID: 1081500993757719505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_1"
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 205
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7e3a938f88e9be0800000000000000
+      internalID: -1468585828775893013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_2"
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 204
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfb9b0a8a9e3d670800000000000000
+      internalID: 8562444227021750232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_3"
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 211
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb9af79616984620800000000000000
+      internalID: 2758619795547659237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_4"
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 210
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9f609cae15107a0800000000000000
+      internalID: -6412754325562000940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_5"
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 203
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62b0e24526d43f50800000000000000
+      internalID: 6860343587916264042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_6"
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 205
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9225d5ac3f16246e0800000000000000
+      internalID: -1854812396823162327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_7"
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 197
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18d243eb4897d400800000000000000
+      internalID: 348914947847280667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_8"
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 205
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e1845b93366ae40800000000000000
+      internalID: 5667326280598036064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Troisi\xE8me plan_9"
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 200
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2deebd94d95ebd5d0800000000000000
+      internalID: -3036581060019491118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Troisi\xE8me plan_0": 1081500993757719505
+      "Troisi\xE8me plan_1": -1468585828775893013
+      "Troisi\xE8me plan_2": 8562444227021750232
+      "Troisi\xE8me plan_3": 2758619795547659237
+      "Troisi\xE8me plan_4": -6412754325562000940
+      "Troisi\xE8me plan_5": 6860343587916264042
+      "Troisi\xE8me plan_6": -1854812396823162327
+      "Troisi\xE8me plan_7": 348914947847280667
+      "Troisi\xE8me plan_8": 5667326280598036064
+      "Troisi\xE8me plan_9": -3036581060019491118
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -23,7 +23,14 @@ public class CharaController : MonoBehaviour
     Rigidbody2D rb;
     //Vector2 input;
     float inputX;
-    public LayerMask groundLayer;
+    // public LayerMask groundLayer;
+
+    // Détection du sol
+    [Header("Ground Check")]
+    [SerializeField] private Transform groundCheck1;
+    [SerializeField] private Transform groundCheck2;
+    [SerializeField] private float groundCheckRadius = 0.15f;
+    [SerializeField] private LayerMask groundLayer;
 
     // paramètre de dash 
     private bool canDash = true;
@@ -51,27 +58,39 @@ public class CharaController : MonoBehaviour
         }
         inputX = Input.GetAxisRaw("Horizontal");
 
-        bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
+       // bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
 
+       // GROUND CHECK 1 
+        bool isGround1 = Physics2D.OverlapCircle(groundCheck1.position, groundCheckRadius, groundLayer);
+
+        // GROUND CHECK 2
+        bool isGround2 = Physics2D.OverlapCircle(groundCheck2.position, groundCheckRadius, groundLayer);
+
+        bool isGrounded = isGround1 || isGround2;
+
+        // Saut
         if (Input.GetButtonDown("Jump") && isGrounded) 
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+
         else
         {
             Animation.SetBool(Jump, false);
         }
 
-        if(!isGrounded || !isGrounded && inputX > 0)
+
+        if (!isGrounded)
         {
             Animation.SetBool(Jump, true);
             Animation.SetBool(Run, false);
             Animation.SetBool(Idle, false);
         }
+        
         //input =  new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // input.Normalize();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& canDash) // permet au joueur d'effectuer un dash en appuyant sur une touche
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash) // permet au joueur d'effectuer un dash en appuyant sur une touche
         {
             StartCoroutine(Dash());
         }
@@ -140,8 +159,26 @@ public class CharaController : MonoBehaviour
        
     }
 
+    // Affichage du GroundCheck
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck1 != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck1.position, groundCheckRadius);
+        }
 
-   
+        if (groundCheck2 != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck2.position, groundCheckRadius);
+        }
+
+    }
+
+    
+
+
 }
 
 
