@@ -52,6 +52,7 @@ public class CharaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         if (isDashing) // Permet de désactiver les autres mouvements pendant le dash
         {
             return;
@@ -86,7 +87,13 @@ public class CharaController : MonoBehaviour
             Animation.SetBool(Run, false);
             Animation.SetBool(Idle, false);
         }
-        
+
+        // Attaque
+        if ( Input.GetButton("Fire1"))
+        {
+            Animation.SetTrigger(attaque);
+        }
+
         //input =  new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // input.Normalize();
 
