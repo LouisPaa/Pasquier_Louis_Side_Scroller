@@ -39,6 +39,11 @@ public class CharaController : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 0.5f;
 
+    // paramètre de son de marche
+    private AudioManager audioManager;
+    private float footstepTimer = 0f;
+    public float footstepInterval = 0.5f; // Intervalle entre les sons de pas
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,6 +52,7 @@ public class CharaController : MonoBehaviour
     void Start()
     {
         Animation = GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -55,22 +61,41 @@ public class CharaController : MonoBehaviour
       
         if (isDashing) // Permet de désactiver les autres mouvements pendant le dash
         {
+            footstepTimer = 0f; 
             return;
         }
         inputX = Input.GetAxisRaw("Horizontal");
+       
 
-       // bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
+            // bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, groundLayer);
 
-       // GROUND CHECK 1 
-        bool isGround1 = Physics2D.OverlapCircle(groundCheck1.position, groundCheckRadius, groundLayer);
+            // GROUND CHECK 1 
+            bool isGround1 = Physics2D.OverlapCircle(groundCheck1.position, groundCheckRadius, groundLayer);
 
         // GROUND CHECK 2
         bool isGround2 = Physics2D.OverlapCircle(groundCheck2.position, groundCheckRadius, groundLayer);
 
         bool isGrounded = isGround1 || isGround2;
 
+        // bruit de pas 
+        if (inputX != 0 && isGrounded)
+        {
+            footstepTimer -= Time.deltaTime;
+
+            if ( footstepTimer <=0f)
+            {
+                audioManager.PlayWalkSound();
+                footstepTimer = footstepInterval;
+            }
+        }
+
+        else
+        {
+              footstepTimer = 0f; 
+        }
+
         // Saut
-        if (Input.GetButtonDown("Jump") && isGrounded) 
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }

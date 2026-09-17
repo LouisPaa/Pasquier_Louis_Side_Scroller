@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(KnockbackRoutine(direction, distance));
     }
 
-    private IEnumerator KnockbackRoutine(Vector2 direction, float distance) // Gère lee recul de l'ennemi
+    private IEnumerator KnockbackRoutine(Vector2 direction, float distance) // Gère le recul de l'ennemi
     {
         Vector2 startPos = transform.position;
         Vector2 targetPos = startPos + direction.normalized * distance;
