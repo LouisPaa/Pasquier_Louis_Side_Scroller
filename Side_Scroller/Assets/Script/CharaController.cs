@@ -98,6 +98,7 @@ public class CharaController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            audioManager.PlayJumpSound();
         }
 
         else
@@ -117,6 +118,7 @@ public class CharaController : MonoBehaviour
         if ( Input.GetButton("Fire1"))
         {
             Animation.SetTrigger(attaque);
+            audioManager.PlayAttackSound();
         }
 
         //input =  new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -138,6 +140,7 @@ public class CharaController : MonoBehaviour
         {
             Animation.SetBool(dash, true);
             return;
+            audioManager.PlayDashSound();
         }
         
         var v = rb.linearVelocity;
