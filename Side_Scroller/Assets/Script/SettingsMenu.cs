@@ -28,6 +28,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetVolume(float volume) // Permet de régler le volume du jeu en fonction de la valeur du slider
     {
         audioMixer.SetFloat("volume", volume);
+        Debug.Log(volume);
     }
 
 

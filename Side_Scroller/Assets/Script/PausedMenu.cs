@@ -15,7 +15,7 @@ public class PausedMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {// Permet d'afficher le menu de pause en appuyant sur la touche "Echap"
-        /* if (Input.GetKeyDown(KeyCode.Escape))
+      /*   if (Input.GetKeyDown(KeyCode.Escape))
          {
              container .SetActive(true);
              Time.timeScale = 0f;
@@ -61,10 +61,12 @@ public class PausedMenu : MonoBehaviour
 
     public void OptionsButton() // Permet d'afficher le menu des options lorsque le joueur clique sur le bouton "Options"
     {
-        
+        Debug.Log("OptionsButton clicked");
+
         container.SetActive(false);
         OptionsMenu.SetActive(true);
 
+        Debug.Log("OptionsMenu active: " + OptionsMenu.activeSelf);
     }
 
 }
